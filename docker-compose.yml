@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  servidor:
+    container_name: php-nginx-angularjs
+    image: trafex/php-nginx
+    volumes:
+      - ./:/var/www/html
+      - ./server/nginx.conf:/etc/nginx/nginx.conf
+      - ./server/php.ini:/etc/php81/php.ini
+    ports:
+      - 8080:8080
+  bd:
+    container_name: mariadb_angularjs
+    image: mariadb
+    environment: 
+      MARIADB_USER: food
+      MARIADB_PASSWORD: food
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - ../server/docker/nginx_php_mariadb/sql:/var/lib/mysql
+    ports:
+      - 3306:3306
