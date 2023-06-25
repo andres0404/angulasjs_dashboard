@@ -1,0 +1,71 @@
+<!-- Modal -->
+<div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <form name="frmCliente" ng-submit="guardar(cliente)" novalidate="novalidate">
+        <div class="modal-body">
+          <div class="form-group form-group-sm">
+            <label for="correo" class="col-sm-2 control-label">Correo</label>
+            <div class="col-sm-10">
+              <input type="email" ng-model="cliente.correo" id="correo" class="form-control" required placeholder="correo">
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="direccion" class="col-sm-2 control-label">Direccion</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="cliente.direccion" id="direccion" class="form-control" placeholder="direccion">
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="nombre" class="col-sm-2 control-label">nombre</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="cliente.nombre" required id="nombre" class="form-control" placeholder="nombre">
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="pais" class="col-sm-2 control-label">pais</label>
+            <div class="col-sm-10">
+              <select ng-model="cliente.pais" id="pais" required class="form-control">
+                <option ng-repeat="pais in paises" value="{{ pais }}">{{ pais }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="telefono1" class="col-sm-2 controldocker -label">telefono1</label>
+            <div class="col-sm-10">
+              <input type="text" required ng-model="cliente.telefono1" id="telefono1" class="form-control" placeholder="Celular">
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="telefono2" class="col-sm-2 control-label">telefono2</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="cliente.telefono2" id="telefono2" class="form-control" placeholder="Celular trabajo">
+            </div>
+          </div>
+
+          <div class="form-group form-group-sm">
+            <label for="zip" class="col-sm-2 control-label">zip</label>
+            <div class="col-sm-10">
+              <input type="text" ng-model="cliente.zip" id="zip" class="form-control" placeholder="Zona zip">
+            </div>
+          </div>
+          &nbsp;
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Cerrar</button>
+          <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

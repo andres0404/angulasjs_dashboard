@@ -1,0 +1,18 @@
+{
+    "mensajes": [{
+        "nombre": "Mikasa",
+        "img": "../dist/img/mikasa.jpg",
+        "mensaje": "Me encuentro cerca de un titan. Venga Goku!",
+        "fecha":"Ayer"
+    },{
+        "nombre": "Eren",
+        "img": "../dist/img/eren.jpg",
+        "mensaje": "Yo no puedo creer que me haya hecho esto con mikacita, usted sabe lomio con ella",
+        "fecha": "Hace 12 minutos"
+    },{
+        "nombre": "Anne",
+        "img": "../dist/img/anna.png",
+        "mensaje": "La repetimos? ;p",
+        "fecha": "Hace 5 minutos"
+    }]
+}

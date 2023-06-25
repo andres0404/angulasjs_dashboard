@@ -1,0 +1,20 @@
+{
+    "notificaciones": [
+        {
+            "icono": "fa-exclamation-triangle",
+            "notificacion": "Esta paila de disco"
+        },
+        {
+            "icono": "fa-child",
+            "notificacion": "Usuarios esperan tu aprobación"
+        },
+        {
+            "icono": "fa-truck",
+            "notificacion": "Tu pedido espera en porteria. Debes revisar antes de reportar"
+        },
+        {
+            "icono": "fa-bitcoin",
+            "notificacion": "Precio cryptos"
+        }
+    ]
+}

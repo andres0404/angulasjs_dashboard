@@ -1,0 +1,58 @@
+<ol class="breadcrumb animated fadeIn fast">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+    <li class="active">Clientes</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3 class="box-title">Tabla bordeada</h3>
+                <div class="box-tools">
+                    <div class="input-group">
+                        <!-- data-toggle="modal" data-target="#modalCliente" -->
+                        <a href="javascript:void()" ng-click="mostrarModal()" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar cliente</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>			
+                            <th style="width: 10px;">#</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Zip</th>
+                            <th>Telefono1</th>
+                            <th>Telefono2</th>
+                            <th>País</th>
+                            <th>Dirección</th>
+                            <th>Edita</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cliente in clientes.clientes">
+                            <td>{{ cliente.id }}</td>
+                            <td>{{ cliente.nombre }}</td>
+                            <td>{{ cliente.correo }}</td>
+                            <td>{{ cliente.zip }}</td>
+                            <td>{{ cliente.telefono1 }}</td>
+                            <td>{{ cliente.telefono2 }}</td>
+                            <td>{{ cliente.pais }}</td>
+                            <td>{{ cliente.direccion }}</td>
+                            <td>
+                                <a  ng-click="mostrarModal(cliente)" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
+                            </td>
+                        </tr>
+                    </tbody >    
+                </table>
+                <ul class="pagination pagination-sm-no-margin pull-right">
+                    <li><a ng-click="moverP(1)" href="javascript:void()"><i class="fa fa-chevron-left"></i></a></li>
+                    <li ng-repeat="pag in clientes.paginas" ng-class="{'active': clientes.pag_actual == pag}"><a ng-click="moverP(pag)" href="javascript:void()">{{ pag }}</a></li>
+                    <li><a href="javascript:void()" ng-click="moverP(clientes.total_paginas)"><i class="fa fa-chevron-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-include="'template/cliente_modal.html'">modal</div>
