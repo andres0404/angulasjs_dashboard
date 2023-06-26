@@ -7,6 +7,10 @@
             aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
+      <div class="form-group form-group-sm col-sm-12">
+        <div class="alert alert-danger" role="alert" ng-show="error">{{ error_message }}</div>
+        <div class="alert alert-success" role="alert" ng-show="success">{{ error_message }}</div>
+      </div>
       <form name="frmCliente" ng-submit="guardar(cliente)" novalidate="novalidate">
         <div class="modal-body">
           <div class="form-group form-group-sm">

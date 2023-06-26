@@ -18,7 +18,8 @@ if(isset($_POST['id'])){
 }
 
 $respuesta = ['err' => false, 'mensaje' => 'Registro almacenado' ,"sql" => $sql];
-if($code = Database::ejecutar_idu($sql)) {
+$code = Database::ejecutar_idu($sql);
+if($code !== true) {
     $respuesta = ['err' => true, 'mensaje' => $code,"sql" => $sql];
 } 
 

@@ -12,11 +12,14 @@ var appClientes = angular.module('service.clientes',[])
         'paginas'	    : [],
         guardar: (cliente) => {
             var q = $q.defer();
-            console.log("guardando cliente", cliente);
             $http.post('http://localhost:8080/php/service_post_clientes.php', cliente)
             .then(response => {
-                console.log(response);
-                q.resolve()
+                if(response.data.err){
+                    q.reject(response.data.mensaje)
+                } else {
+                    q.resolve()
+                    self.cargarPagina(self.pag_actual)
+                }
             })
             .catch(error => {
                 q.reject()
