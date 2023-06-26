@@ -1,5 +1,7 @@
-var appClientes = angular.module('service.clientes',[])
-.factory('Clientes',['$http','$q',($http, $q) => {
+var appClientes = angular.module('service.clientes',[
+    'config.conf'
+])
+.factory('Clientes',['$http','$q','URL',($http, $q, URL) => {
     var self = {
         cargando        : false,
         'err'     		: false, 
@@ -12,7 +14,7 @@ var appClientes = angular.module('service.clientes',[])
         'paginas'	    : [],
         guardar: (cliente) => {
             var q = $q.defer();
-            $http.post('http://localhost:8080/php/service_post_clientes.php', cliente)
+            $http.post(`${URL}service_post_clientes.php`, cliente)
             .then(response => {
                 if(response.data.err){
                     q.reject(response.data.mensaje)
@@ -28,7 +30,7 @@ var appClientes = angular.module('service.clientes',[])
         },
         cargarPagina: (pag = 1) => {
             var q = $q.defer()
-            $http.get(`http://localhost:8080/php/service_clientes.php?pag=${pag}`)
+            $http.get(`${URL}service_clientes.php?pag=${pag}`)
             .then(response => {
                 self.conteo = response.data.conteo
                 self.clientes = response.data.clientes

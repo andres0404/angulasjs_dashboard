@@ -1,10 +1,12 @@
-var appPaises = angular.module('service.paises',[])
-.factory('Paises',['$http','$q',($http, $q) => {
+var appPaises = angular.module('service.paises',[
+    'config.conf'
+])
+.factory('Paises',['$http','$q','URL',($http, $q, URL) => {
     var self = {
         paises:[],
         cargar: () => {
             var q = $q.defer()
-            $http.get("http://localhost:8080/php/service_paises.php")
+            $http.get(`${URL}service_paises.php`)
             .then(response => {
                 self.paises = response.data.map(elem => elem.pais)
                 q.resolve()
