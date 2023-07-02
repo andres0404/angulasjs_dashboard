@@ -328,5 +328,13 @@ class Database{
 
 	}
 
+	public static function verifyToken($token){
+		
+	}
+
+	public static function getToken(){
+
+	}
+
 }
 
