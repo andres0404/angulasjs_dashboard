@@ -1,6 +1,11 @@
 <?php
 
-require_once("class.database.php");
+require_once(__DIR__."/../../vendor/autoload.php");
+
+use DatabaseAccess\Database;
+use DatabaseAccess\Key;
+
+// require_once("class.database.php");
 header('Content-Type: application/json;');
 
 
@@ -23,14 +28,14 @@ class Login {
         $result = Database::get_row($sql);
         $response = [
             "mensaje" => "Usuario o contraseña invalido" ,
-            "code" => 0 ,
-            "data" => []
+            "code" => 0 
         ];
         if(count($result) > 0){
             $response = [
                 "mensaje" => "" ,
                 "code" => 1 ,
-                "data" => $result
+                "data" => $result,
+                "token" => Key::getJwt($result)
             ];
         }
         echo json_encode($response);

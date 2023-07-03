@@ -8,6 +8,7 @@
 // Ultima Modificación: 17 de marzo de 2015
 // ======================================================
 	
+namespace DatabaseAccess;
 
 class Database{
 
@@ -40,7 +41,7 @@ class Database{
 	// Constructor de la clase Base de datos
 	// ================================================
 	public function __construct(){
-		$this->_connection = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
+		$this->_connection = new \mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
 
 		// Manejar error en base de datos
 		if (mysqli_connect_error()) {

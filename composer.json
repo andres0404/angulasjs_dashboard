@@ -8,5 +8,12 @@
             "email": "elandrew2000@hotmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "firebase/php-jwt": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "DatabaseAccess\\": "inner/php/"
+        }
+    }
 }
