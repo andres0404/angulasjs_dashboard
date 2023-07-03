@@ -1,0 +1,12 @@
+{
+    "name": "root/angularjs_dashboard",
+    "description": "dashboard hecho con angularjs",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "andres0404",
+            "email": "elandrew2000@hotmail.com"
+        }
+    ],
+    "require": {}
+}
