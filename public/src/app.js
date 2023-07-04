@@ -22,7 +22,9 @@ var log = angular.module('loginApp',[
             $scope.invalido = false;
             $scope.mensaje = "";
             $scope.usuario = response
+            localStorage.setItem("apptoken", response.token);
             console.log("entra", $scope.usuario)
+            window.location = "../inner/";
         })
         .catch(error => {
             console.log("no entra")

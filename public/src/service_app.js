@@ -5,9 +5,9 @@ var appServLogin = angular.module('login.loginService',[])
             var q = $q.defer();
             $http.post('http://localhost:8080/inner/php/service_login.php', datos)
             .then(response => {
-                console.log("respuesta",response)
+                
                 if(response.data.code == 1){
-                    q.resolve(response.data.data)
+                    q.resolve(response.data)
                 } else {
                     q.reject(response.data.mensaje)
 

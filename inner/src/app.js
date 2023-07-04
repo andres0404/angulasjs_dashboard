@@ -43,6 +43,11 @@ app.controller('mainCtrl' , ['$scope','Configuracion','Mensajes','Notificaciones
         $scope.titulo = titulo
         $scope.subtitulo = subtitulo
     }
+
+    $scope.salir = () => {
+        localStorage.removeItem("apptoken");
+        window.location = "../public/";
+    }
 }])
 .filter('quitarletra', () => {
     return (palabra) => {

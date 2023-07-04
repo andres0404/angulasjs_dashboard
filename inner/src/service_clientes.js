@@ -14,7 +14,7 @@ var appClientes = angular.module('service.clientes',[
         'paginas'	    : [],
         guardar: (cliente) => {
             var q = $q.defer();
-            $http.post(`${URL}service_post_clientes.php`, cliente)
+            $http.post(`${URL}service_post_clientes.php`,cliente, {headers:{'Authorization':localStorage.getItem('apptoken')}})
             .then(response => {
                 if(response.data.err){
                     q.reject(response.data.mensaje)
@@ -30,7 +30,7 @@ var appClientes = angular.module('service.clientes',[
         },
         cargarPagina: (pag = 1) => {
             var q = $q.defer()
-            $http.get(`${URL}service_clientes.php?pag=${pag}`)
+            $http.get(`${URL}service_clientes.php?pag=${pag}`,{headers:{'Authorization': localStorage.getItem('apptoken')}})
             .then(response => {
                 self.conteo = response.data.conteo
                 self.clientes = response.data.clientes

@@ -6,7 +6,7 @@ var appPaises = angular.module('service.paises',[
         paises:[],
         cargar: () => {
             var q = $q.defer()
-            $http.get(`${URL}service_paises.php`)
+            $http.get(`${URL}service_paises.php`,{headers:{'Authorization': localStorage.getItem("apptoken")}})
             .then(response => {
                 self.paises = response.data.map(elem => elem.pais)
                 q.resolve()
