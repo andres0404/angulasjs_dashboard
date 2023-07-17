@@ -46,17 +46,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Controladores -->
     <script src="src/config.js"></script>
     <script src="src/app.js"></script>
-    <script src="src/routes.js"></script>
     <script src="src/service_info.js"></script>
     <script src="src/service_mensajes.js"></script>
     <script src="src/service_notificaciones.js"></script>
     <script src="src/service_clientes.js"></script>
+    <script src="src/service_paises.js"></script>
+    <script src="src/service_factura.js"></script>
     <script src="src/p.js"></script>
     <script src="src/clientesCtrl.js"></script>
-    <script src="src/service_paises.js"></script>
-    <!-- <script src="angular/controladores/dashboardCtrl.js"></script>
-    <script src="angular/controladores/clientesCtrl.js"></script> -->
-
+    <script src="src/facturaCtrl.js"></script>
+    <script src="src/routes.js"></script>
+   
 
     <!-- servicios -->
     <!-- <script src="angular/servicios/configuracion_service.js"></script>

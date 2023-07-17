@@ -4,6 +4,8 @@
   "year":2023,
   "iniciales":"BTS",
   "enterprise":"ifware",
+  "email":"elmailcampeon@gmail.com",
+  "phone":"+57 310 90889090",
   "dependencies": {
     "angular": "^1.8.2",
     "angular-route": "^1.8.3",

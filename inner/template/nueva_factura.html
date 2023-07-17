@@ -1,0 +1,83 @@
+<ol class="breadcrumb animated fadeIn fast">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+    <li ><a href="#!/facturas"><i class="fa fa-usd"></i> Facturas</a></li>
+    <li class="active">Nueva</li>
+</ol>
+<!-- Cuadro de busqueda -->
+<div class="row fadeIn fast" >
+    <div class="col-sm-12">
+        <section class="panel" ng-show="cliente.id === undefined">
+            <header class="panel-heading">
+                Seleccionar cliente
+            </header>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="">Buscar cliente</label>
+                    <input type="text" class="form-control" placeholder="Nombre" autofocus required bg-model="buscar">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_buscar_cliente">
+                        Buscar cliente
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- descripcion de la factura -->
+        <section class="invoice fadeIn fast">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="page-header">
+                        <i class="fa fa-globe"></i> {{ config.aplicativo }} | {{ config.iniciales }}
+                        <small class="pull-right">Fecha: {{hoy | date:'dd-MM-yyyy'}}</small>
+                    </h2>
+                </div>
+            </div>
+            <div class="row invoice-info">
+
+                <div class="col-sm-5 invoice-col">
+                    De <address>
+                        <strong>{{ config.aplicativo }} - {{ config.iniciales }}</strong><br>
+                        {{ config.direccion }}
+                        <b>Telefono:</b> {{ config.phone }} <br>
+                        <b>Email:</b> {{ config.email }}
+                    </address>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_buscar_cliente" tabindex="-1" role="dialog" aria-labelledby="modal_buscar_clienteLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="modal_buscar_clienteLabel">Buscar cliente</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Selección</th>
+            </tr>
+            <tr ng-repeat="client in clientes">
+                <td>{{ client.id }}</td>
+                <td>{{ client.nombre}}</td>
+                <td>
+                    <button ng-click="cliente_sel(client)" type="button" class="btn btn-default btn-xs">
+                        <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>&nbsp;</button>
+                </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>

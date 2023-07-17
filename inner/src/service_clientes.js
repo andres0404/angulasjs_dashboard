@@ -42,6 +42,18 @@ var appClientes = angular.module('service.clientes',[
                 q.resolve()
             })
             return q.promise;
+        },
+        buscar: (busqueda) => {
+            var q = $q.defer();
+            self.cargando = true;
+            $http.post(`${URL}buscar_cliente.php?p=${busqueda}`,{headers: {'Authorization':localStorage.getItem('apptoken')}})
+            .then(response => {
+                console.log(response);
+                self.cargando = false;
+                self.clientes = response.clientes;
+                q.resolve();
+            })
+            return q.promise()
         }
     }
     return self

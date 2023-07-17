@@ -5,7 +5,8 @@ var app = angular.module('facturacionApp',[
     'service.mensajes',
     'service.notificaciones',
     'service.clientes',
-    'controller.clientes'
+    'controller.clientes',
+    'controller.factura'
 ])
 
 app.controller('mainCtrl' , ['$scope','Configuracion','Mensajes','Notificaciones',function ($scope, Configuracion, Mensajes, Notificaciones) {
@@ -16,7 +17,9 @@ app.controller('mainCtrl' , ['$scope','Configuracion','Mensajes','Notificaciones
             iniciales: $scope.configuracion.info.iniciales,
             version: $scope.configuracion.info.version,
             anio: $scope.configuracion.info.year,
-            empresa: $scope.configuracion.info.enterprise
+            empresa: $scope.configuracion.info.enterprise,
+            email: $scope.configuracion.info.email,
+            phone: $scope.configuracion.info.phone
         }
     });
     $scope.usuario = {
@@ -70,7 +73,7 @@ angular.module('jcs-autoValidate')
 .run([
     'defaultErrorMessageResolver',
     function (defaultErrorMessageResolver) {
-        defaultErrorMessageResolver.setI18nFileRootPath('bower_components/angular-auto-validate/dist/lang')
+        defaultErrorMessageResolver.setI18nFileRootPath('../bower_components/angular-auto-validate/dist/lang')
         defaultErrorMessageResolver.setCulture('es-co')
     }
 ])

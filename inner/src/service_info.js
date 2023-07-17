@@ -4,7 +4,7 @@ var appSInfo = angular.module('service.info', [])
         info:{},
         cargar: () => {
             var q = $q.defer();
-            $http.get('./package.json')
+            $http.get('../package.json')
             .then(response => {
                 q.resolve()
                 self.info = response.data

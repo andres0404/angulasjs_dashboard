@@ -27,7 +27,7 @@ class Database{
 	// ================================================
 	// Metodo para obtener instancia de base de datos
 	// ================================================
-	public static function getInstancia(){
+	public static function getInstancia() : Database{
 
 		if(!isset(self::$_instancia)){
 			self::$_instancia = new self;
@@ -236,7 +236,8 @@ class Database{
 		try{
 			$db = Database::getInstancia();
 			$mysqli = $db->getConnection();
-			$resultado = $mysqli->query($sql);
+			$mysqli->query($sql);
+			$resultado = $mysqli->insert_id;
 		}catch (mysqli_sql_exception $e) {
 			return $mysqli->error;
 		}
